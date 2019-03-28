@@ -32,7 +32,25 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String email = editEmail.getText().toString();
-                Toast.makeText(MainActivity.this,email, Toast.LENGTH_SHORT).show();
+                String pass = editPassword.getText().toString();
+                if (email.equals("ManuTuli")){
+                    if(pass.equals("Manu123")){
+                        errorMessage.setText("Login Successful");
+                    }else {
+                        errorMessage.setText("Incorrect Password");
+                    }
+//                Toast.makeText(MainActivity.this,email, Toast.LENGTH_SHORT).show();
+            }else{
+                    errorMessage.setText("Incorrect Username");
+                }
+            }
+        });
+
+        buttonClear.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                editEmail.getText().clear();
+                editPassword.getText().clear();
             }
         });
 
